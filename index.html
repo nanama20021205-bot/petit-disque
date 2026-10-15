@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#fff0f6">
+<meta name="description" content="A little pink coquette music room.">
+<title>petit disque ♡</title>
+<style>
+:root{--pink:#f6bfd5;--rose:#d96d9c;--deep:#9e426d;--cream:#fffafc;--ink:#684656;--line:#f0d6e2}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0%,#fff 0,#fff4f8 40%,#fce5ef 100%);color:var(--ink);font-family:ui-rounded,"Hiragino Maru Gothic ProN","Noto Sans JP",system-ui,sans-serif;min-height:100vh}
+button,input{font:inherit}button{cursor:pointer;color:inherit}.app{max-width:900px;margin:auto;padding:18px 16px 32px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-size:1.35rem;font-weight:900;letter-spacing:.03em}.sub{font-size:.76rem;color:#a8758e;margin-top:3px}.pill{border:1px solid var(--line);background:#fffafc;border-radius:999px;padding:9px 13px;font-size:.8rem;box-shadow:0 3px 12px #d58eaa18}
+main{margin-top:18px}.hero{text-align:center;padding:18px 10px 8px}.eyebrow{font-size:.75rem;letter-spacing:.18em;color:var(--rose)}h1{font-size:clamp(1.8rem,6vw,2.6rem);margin:6px 0 4px;color:var(--deep)}.intro{font-size:.9rem;color:#a8758e;margin:0}
+.panel{background:#ffffffb8;border:1px solid #fff;border-radius:26px;box-shadow:0 10px 35px #c5799820;padding:18px;margin:14px 0;backdrop-filter:blur(10px)}
+.player-grid{display:grid;grid-template-columns:1fr;gap:20px;align-items:center}@media(min-width:650px){.player-grid{grid-template-columns:1fr 1fr;padding:24px}}
+.turntable{position:relative;width:min(74vw,310px);aspect-ratio:1;margin:0 auto;background:linear-gradient(145deg,#fff,#f6dce7);border:1px solid #efcbdc;border-radius:28px;box-shadow:inset 0 2px 8px #fff,0 8px 22px #d7a2b81c;display:grid;place-items:center;overflow:hidden}
+.vinyl{width:76%;aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle,#28232a 0 2px,#3c3540 3px 4px,#242128 5px 7px);box-shadow:0 7px 14px #3c24354a;display:grid;place-items:center;position:relative}
+.vinyl:before{content:"";position:absolute;inset:8%;border-radius:50%;border:1px solid #ffffff20}
+.label-disc{width:36%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#fff2f8 0 7%,#d875a2 8% 55%,#f5b9d2 56%);display:grid;place-items:center;color:#7f3157;font-size:clamp(.6rem,2vw,.85rem);font-weight:900;text-align:center;border:3px solid #f9d9e7;line-height:1.15}
+.spindle{position:absolute;width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px #b35a82}
+.arm{position:absolute;width:7px;height:39%;right:13%;top:13%;border-radius:10px;background:linear-gradient(90deg,#b88c9e,#fff0f7,#c8a0b0);transform:rotate(-20deg);transform-origin:top center;box-shadow:0 2px 4px #95607855}
+.arm:after{content:"";position:absolute;bottom:-4px;left:-3px;width:13px;height:20px;border-radius:4px;background:#d67ba3;border:1px solid #fff0f7}
+.turntable.playing .vinyl{animation:spin 2.6s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.now{text-align:center}.tiny{font-size:.72rem;letter-spacing:.14em;color:var(--rose)}.song{font-size:1.18rem;font-weight:850;margin:7px 0 3px}.artist{font-size:.85rem;color:#a8758e}.controls{display:flex;align-items:center;justify-content:center;gap:12px;margin:17px 0 10px}.circle{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:1.1rem}.play{width:56px;height:56px;border:0;background:linear-gradient(145deg,#ee9fc1,#cf6597);color:white;font-size:1.35rem;box-shadow:0 6px 15px #d96d9c55}.progress{height:5px;background:#f2d9e4;border-radius:99px;overflow:hidden;margin:12px 0}.progress span{display:block;width:0;height:100%;background:#d96d9c}.time{display:flex;justify-content:space-between;color:#b58a9e;font-size:.72rem}
+.notice{font-size:.78rem;line-height:1.6;background:#fff4f8;border:1px dashed #edbfd3;border-radius:16px;padding:11px 13px;margin-top:14px}.section-title{font-weight:900;color:var(--deep);margin:0 0 12px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.tab{border:1px solid var(--line);border-radius:999px;background:#fff9fc;padding:9px 14px;font-size:.8rem}.tab.active{background:#d96d9c;color:white;border-color:#d96d9c}.row{display:flex;align-items:center;gap:10px}.row input{flex:1;min-width:0;border:1px solid var(--line);border-radius:12px;padding:11px;background:#fffafd;color:var(--ink)}.action{border:0;border-radius:999px;background:#d96d9c;color:white;padding:10px 15px;font-weight:800}.track{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #f5e3eb}.track:last-child{border:0}.cover{width:43px;height:43px;flex-shrink:0;border-radius:12px;background:linear-gradient(135deg,#f8d7e6,#fff,#eaa5c4);display:grid;place-items:center;font-size:1.2rem}.track-info{flex:1;min-width:0}.track-name{font-size:.88rem;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.track-artist{font-size:.75rem;color:#ae8297}.smallbtn{border:1px solid var(--line);background:#fff9fc;border-radius:999px;padding:7px 10px;font-size:.75rem}.foot{text-align:center;font-size:.72rem;color:#b58a9e;padding:12px}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div><div class="brand">🎀 petit disque ♡</div><div class="sub">your little pink music room</div></div><button class="pill" id="installBtn" hidden>ホーム画面に追加</button></header>
+<main>
+<section class="hero"><div class="eyebrow">♡ MUSIC, LIKE A LITTLE TREASURE ♡</div><h1>mon petit monde</h1><p class="intro">お気に入りの音楽を、かわいいレコードに。</p></section>
+<section class="panel player-grid">
+<div class="turntable" id="turntable" aria-label="レコードプレイヤー"><div class="vinyl"><div class="label-disc">petit<br>disque</div><div class="spindle"></div></div><div class="arm"></div></div>
+<div class="now"><div class="tiny">NOW ON THE TURNTABLE</div><div class="song" id="songName">まだ曲が選ばれていません</div><div class="artist" id="artistName">下の検索から曲を探してね ♡</div><div class="controls"><button class="circle" id="prevBtn" aria-label="前の曲">‹</button><button class="circle play" id="playBtn" aria-label="再生">▶</button><button class="circle" id="nextBtn" aria-label="次の曲">›</button></div><div class="progress"><span id="progressFill"></span></div><div class="time"><span id="elapsed">0:00</span><span id="duration">--:--</span></div><div class="notice">♡ この画面はプレイヤーの試作品です。Spotify連携を設定するまでは音声は再生されません。曲を検索するとSpotifyで開けます。</div></div>
+</section>
+<div class="tabs"><button class="tab active" data-tab="search">♫ MUSIC BOX</button><button class="tab" data-tab="playlist">♡ PLAYLIST</button><button class="tab" data-tab="about">✧ ABOUT</button></div>
+<section class="panel" id="searchPanel"><h2 class="section-title">曲を見つける ♡</h2><div class="row"><input id="searchInput" placeholder="曲名・アーティスト名を入力"><button class="action" id="searchBtn">検索</button></div><div id="results" style="margin-top:12px"><p class="artist">例：EXO、NCT U、ATEEZ、好きな曲の名前</p></div></section>
+<section class="panel" id="playlistPanel" hidden><h2 class="section-title">my playlist ♡</h2><div class="row"><input id="playlistName" placeholder="プレイリスト名"><button class="action" id="createList">作成</button></div><div id="lists" style="margin-top:12px"></div></section>
+<section class="panel" id="aboutPanel" hidden><h2 class="section-title">about petit disque</h2><p style="font-size:.88rem;line-height:1.8">リボンとパールに包まれた、小さな音楽のお部屋。ここからSpotify連携を追加していく予定です。</p><p class="artist">ホーム画面に追加するには、サイトを公開した後、Chromeのメニューから「ホーム画面に追加」を選びます。</p></section>
+</main><footer class="foot">made with ♡ and ribbons · petit disque</footer>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+let tracks=[],current=-1,playing=false,lists=JSON.parse(localStorage.getItem('petitLists')||'[]');
+function saveLists(){localStorage.setItem('petitLists',JSON.stringify(lists));renderLists()}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function selectTrack(t){current=tracks.findIndex(x=>x.id===t.id);$('#songName').textContent=t.name;$('#artistName').textContent=t.artist+' · Spotifyで開いて再生';$('#duration').textContent='Spotifyで再生';$('#progressFill').style.width='0%';playing=false;updatePlay();$('#turntable').classList.remove('playing')}
+function updatePlay(){$('#playBtn').textContent=playing?'Ⅱ':'▶';$('#turntable').classList.toggle('playing',playing);$('#elapsed').textContent=playing?'●':'0:00'}
+function renderTracks(){const box=$('#results');if(!tracks.length){box.innerHTML='<p class="artist">検索すると、ここに曲が表示されます。</p>';return}box.innerHTML=tracks.map((t,i)=>`<div class="track"><div class="cover">♫</div><div class="track-info"><div class="track-name">${esc(t.name)}</div><div class="track-artist">${esc(t.artist)}</div></div><button class="smallbtn" data-play="${i}">セット</button><button class="smallbtn" data-open="${i}">Spotify ↗</button></div>`).join('');box.querySelectorAll('[data-play]').forEach(b=>b.onclick=()=>selectTrack(tracks[+b.dataset.play]));box.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>window.open('https://open.spotify.com/search/'+encodeURIComponent(tracks[+b.dataset.open].name+' '+tracks[+b.dataset.open].artist),'_blank','noopener'))}
+async function search(){const q=$('#searchInput').value.trim();if(!q)return;$('#results').innerHTML='<p class="artist">Spotifyの検索ページを準備しています…</p>';tracks=[{id:'s'+Date.now(),name:q,artist:'検索した曲・アーティスト'}];renderTracks();window.open('https://open.spotify.com/search/'+encodeURIComponent(q),'_blank','noopener')}
+$('#searchBtn').onclick=search;$('#searchInput').addEventListener('keydown',e=>{if(e.key==='Enter')search()});
+$('#playBtn').onclick=()=>{if(current<0){$('#artistName').textContent='先に曲を検索してセットしてね ♡';return}const t=tracks[current];window.open('https://open.spotify.com/search/'+encodeURIComponent(t.name+' '+t.artist),'_blank','noopener');playing=!playing;updatePlay()};
+$('#prevBtn').onclick=()=>{if(tracks.length){current=(current-1+tracks.length)%tracks.length;selectTrack(tracks[current])}};$('#nextBtn').onclick=()=>{if(tracks.length){current=(current+1)%tracks.length;selectTrack(tracks[current])}};
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));['search','playlist','about'].forEach(n=>$('#'+n+'Panel').hidden=n!==b.dataset.tab)});
+$('#createList').onclick=()=>{const name=$('#playlistName').value.trim();if(!name)return;lists.push({name,tracks:[]});$('#playlistName').value='';saveLists()};
+function renderLists(){const box=$('#lists');if(!lists.length){box.innerHTML='<p class="artist">まだプレイリストがありません。名前をつけて作成してね ♡</p>';return}box.innerHTML=lists.map((l,i)=>`<div class="track"><div class="cover">♡</div><div class="track-info"><div class="track-name">${esc(l.name)}</div><div class="track-artist">${l.tracks.length} songs</div></div><button class="smallbtn" data-del="${i}">削除</button></div>`).join('');box.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{lists.splice(+b.dataset.del,1);saveLists()})}renderLists();
+let installPrompt;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;$('#installBtn').hidden=false});$('#installBtn').onclick=async()=>{if(installPrompt){installPrompt.prompt();installPrompt=null}else alert('公開後、Chromeの ⋮ メニューから「ホーム画面に追加」を選んでください。')};
+</script>
+</body>
+</html>
