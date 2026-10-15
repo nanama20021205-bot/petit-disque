@@ -186,7 +186,12 @@ async function handleSpotifyCallback() {
 }
 
 if (spotifyLoginButton) {
-  spotifyLoginButton.addEventListener("click", startSpotifyLogin);
+  spotifyLoginButton.addEventListener("click", () => {
+    setSpotifyStatus("ボタンは反応しています！ ♡");
+    startSpotifyLogin();
+  });
+} else {
+  console.error("Spotify login button not found");
 }
 
 handleSpotifyCallback();
